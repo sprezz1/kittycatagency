@@ -1,5 +1,5 @@
 ---
-
+// KittyCat Agency - Marketing Landing Page
 ---
 
 <html lang="en">
@@ -8,9 +8,944 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>KittyCat Agency - 10x Your Creator Revenue with Professional 24/7 Chat Management</title>
+		<meta name="description" content="Premium chat management for OnlyFans, Fanvue & Fanflow creators. Native English speakers. Consistent 1:10 conversion ratios. No minimum requirements. Scale your revenue without the burnout." />
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			:root {
+				--primary: #10b981;
+				--primary-dark: #059669;
+				--primary-light: #34d399;
+				--secondary: #14b8a6;
+				--dark-bg: #0f172a;
+				--dark-card: #1e293b;
+				--dark-card-hover: #334155;
+				--text-primary: #f1f5f9;
+				--text-secondary: #cbd5e1;
+				--text-muted: #94a3b8;
+				--border-dark: #334155;
+				--white: #ffffff;
+			}
+
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+				line-height: 1.6;
+				color: var(--text-primary);
+				background: var(--dark-bg);
+			}
+
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 24px;
+			}
+
+			/* Header */
+			header {
+				background: rgba(15, 23, 42, 0.95);
+				backdrop-filter: blur(10px);
+				padding: 20px 0;
+				border-bottom: 1px solid var(--border-dark);
+				position: sticky;
+				top: 0;
+				z-index: 100;
+			}
+
+			nav {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.logo {
+				font-size: 24px;
+				font-weight: 800;
+				background: linear-gradient(135deg, var(--primary), var(--secondary));
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+
+			.cta-button {
+				background: linear-gradient(135deg, var(--primary), var(--secondary));
+				color: var(--white);
+				padding: 12px 32px;
+				border-radius: 8px;
+				text-decoration: none;
+				font-weight: 600;
+				transition: transform 0.2s, box-shadow 0.2s;
+				border: none;
+				cursor: pointer;
+				font-size: 16px;
+			}
+
+			.cta-button:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+			}
+
+			.cta-button-secondary {
+				background: var(--white);
+				color: var(--primary);
+				border: 2px solid var(--primary);
+			}
+
+			/* Hero Section */
+			.hero {
+				background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #10b981 100%);
+				position: relative;
+				color: var(--white);
+				padding: 100px 0 80px;
+				text-align: center;
+			}
+
+			.hero::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.15), transparent 50%);
+				pointer-events: none;
+			}
+
+			.hero .container {
+				position: relative;
+				z-index: 1;
+			}
+
+			.hero h1 {
+				font-size: 56px;
+				font-weight: 900;
+				line-height: 1.2;
+				margin-bottom: 24px;
+			}
+
+			.hero .subtitle {
+				font-size: 24px;
+				margin-bottom: 16px;
+				opacity: 0.95;
+			}
+
+			.hero p {
+				font-size: 18px;
+				margin-bottom: 40px;
+				opacity: 0.9;
+				max-width: 700px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			.hero-cta {
+				display: flex;
+				gap: 16px;
+				justify-content: center;
+				flex-wrap: wrap;
+			}
+
+			.stats {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 32px;
+				margin-top: 60px;
+			}
+
+			.stat-item {
+				text-align: center;
+			}
+
+			.stat-number {
+				font-size: 48px;
+				font-weight: 900;
+				display: block;
+				margin-bottom: 8px;
+			}
+
+			.stat-label {
+				font-size: 16px;
+				opacity: 0.9;
+			}
+
+			/* Problem Section */
+			.problem {
+				padding: 80px 0;
+				background: var(--dark-bg);
+			}
+
+			.problem h2 {
+				font-size: 42px;
+				font-weight: 800;
+				text-align: center;
+				margin-bottom: 48px;
+				color: var(--text-primary);
+			}
+
+			.problem-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 32px;
+			}
+
+			.problem-card {
+				background: var(--dark-card);
+				padding: 32px;
+				border-radius: 12px;
+				border: 1px solid var(--border-dark);
+				transition: all 0.3s;
+			}
+
+			.problem-card:hover {
+				background: var(--dark-card-hover);
+				border-color: rgba(16, 185, 129, 0.3);
+			}
+
+			.problem-card h3 {
+				font-size: 24px;
+				margin-bottom: 16px;
+				color: var(--primary-light);
+			}
+
+			.problem-card p {
+				color: var(--text-secondary);
+				line-height: 1.8;
+			}
+
+			/* Solution Section */
+			.solution {
+				padding: 80px 0;
+				background: #1a1f2e;
+			}
+
+			.solution h2 {
+				font-size: 42px;
+				font-weight: 800;
+				text-align: center;
+				margin-bottom: 24px;
+				color: var(--text-primary);
+			}
+
+			.solution .intro {
+				text-align: center;
+				font-size: 20px;
+				color: var(--text-muted);
+				max-width: 800px;
+				margin: 0 auto 64px;
+			}
+
+			/* Differentiators */
+			.differentiators {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 32px;
+			}
+
+			.diff-card {
+				text-align: center;
+				padding: 40px 24px;
+				background: var(--dark-card);
+				border: 1px solid var(--border-dark);
+				border-radius: 12px;
+				transition: all 0.3s;
+			}
+
+			.diff-card:hover {
+				border-color: var(--primary);
+				background: var(--dark-card-hover);
+				transform: translateY(-4px);
+				box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+			}
+
+			.diff-icon {
+				font-size: 48px;
+				margin-bottom: 16px;
+			}
+
+			.diff-card h3 {
+				font-size: 22px;
+				margin-bottom: 12px;
+				color: var(--text-primary);
+			}
+
+			.diff-card p {
+				color: var(--text-secondary);
+				line-height: 1.7;
+			}
+
+			/* How It Works */
+			.how-it-works {
+				padding: 80px 0;
+				background: var(--dark-bg);
+			}
+
+			.how-it-works h2 {
+				font-size: 42px;
+				font-weight: 800;
+				text-align: center;
+				margin-bottom: 64px;
+				color: var(--text-primary);
+			}
+
+			.steps {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 48px;
+			}
+
+			.step {
+				text-align: center;
+			}
+
+			.step-number {
+				width: 60px;
+				height: 60px;
+				background: linear-gradient(135deg, var(--primary), var(--secondary));
+				color: var(--white);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 28px;
+				font-weight: 800;
+				margin: 0 auto 24px;
+				box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+			}
+
+			.step h3 {
+				font-size: 22px;
+				margin-bottom: 12px;
+				color: var(--text-primary);
+			}
+
+			.step p {
+				color: var(--text-secondary);
+				line-height: 1.7;
+			}
+
+			/* Results Section */
+			.results {
+				padding: 80px 0;
+				background: linear-gradient(135deg, #1e293b 0%, #059669 100%);
+				color: var(--white);
+			}
+
+			.results h2 {
+				font-size: 42px;
+				font-weight: 800;
+				text-align: center;
+				margin-bottom: 24px;
+			}
+
+			.results .intro {
+				text-align: center;
+				font-size: 20px;
+				max-width: 700px;
+				margin: 0 auto 64px;
+				opacity: 0.95;
+			}
+
+			.results-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 32px;
+			}
+
+			.result-card {
+				background: rgba(255, 255, 255, 0.1);
+				padding: 32px;
+				border-radius: 12px;
+				backdrop-filter: blur(10px);
+				border: 1px solid rgba(255, 255, 255, 0.2);
+			}
+
+			.result-card h3 {
+				font-size: 48px;
+				font-weight: 900;
+				margin-bottom: 8px;
+			}
+
+			.result-card p {
+				font-size: 18px;
+				opacity: 0.9;
+			}
+
+			/* CTA Section */
+			.cta-section {
+				padding: 100px 0;
+				text-align: center;
+				background: #1a1f2e;
+			}
+
+			.cta-section h2 {
+				font-size: 48px;
+				font-weight: 900;
+				margin-bottom: 24px;
+				color: var(--text-primary);
+			}
+
+			.cta-section p {
+				font-size: 20px;
+				color: var(--text-muted);
+				margin-bottom: 40px;
+				max-width: 600px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			/* Contact Form */
+			.contact-form-wrapper {
+				max-width: 700px;
+				margin: 48px auto 0;
+				background: var(--dark-card);
+				padding: 48px;
+				border-radius: 16px;
+				border: 1px solid var(--border-dark);
+				box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+				text-align: left;
+			}
+
+			.contact-form {
+				display: flex;
+				flex-direction: column;
+				gap: 24px;
+			}
+
+			.form-group {
+				display: flex;
+				flex-direction: column;
+				gap: 8px;
+			}
+
+			.form-group label {
+				font-weight: 600;
+				color: var(--text-primary);
+				font-size: 14px;
+			}
+
+			.form-group input,
+			.form-group select,
+			.form-group textarea {
+				padding: 12px 16px;
+				border: 1px solid var(--border-dark);
+				border-radius: 8px;
+				font-size: 16px;
+				font-family: inherit;
+				transition: all 0.2s;
+				background: #0f172a;
+				color: var(--text-primary);
+			}
+
+			.form-group input:focus,
+			.form-group select:focus,
+			.form-group textarea:focus {
+				outline: none;
+				border-color: var(--primary);
+				background: #1e293b;
+				box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+			}
+
+			.form-group textarea {
+				resize: vertical;
+				min-height: 120px;
+			}
+
+			.form-row {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 16px;
+			}
+
+			.form-message {
+				padding: 16px;
+				border-radius: 8px;
+				font-weight: 500;
+				text-align: center;
+				display: none;
+			}
+
+			.form-message.success {
+				display: block;
+				background: #dcfce7;
+				color: #166534;
+				border: 1px solid #86efac;
+			}
+
+			.form-message.error {
+				display: block;
+				background: #fee2e2;
+				color: #991b1b;
+				border: 1px solid #fca5a5;
+			}
+
+			/* Footer */
+			footer {
+				background: #0a0f1a;
+				color: var(--white);
+				padding: 60px 0 40px;
+				border-top: 1px solid var(--border-dark);
+			}
+
+			.footer-content {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 48px;
+				margin-bottom: 40px;
+			}
+
+			.footer-section h3 {
+				font-size: 18px;
+				margin-bottom: 16px;
+				font-weight: 700;
+			}
+
+			.footer-section ul {
+				list-style: none;
+			}
+
+			.footer-section ul li {
+				margin-bottom: 8px;
+			}
+
+			.footer-section a {
+				color: rgba(255, 255, 255, 0.7);
+				text-decoration: none;
+				transition: color 0.2s;
+			}
+
+			.footer-section a:hover {
+				color: var(--white);
+			}
+
+			.footer-bottom {
+				text-align: center;
+				padding-top: 32px;
+				border-top: 1px solid rgba(255, 255, 255, 0.1);
+				color: rgba(255, 255, 255, 0.6);
+			}
+
+			/* Responsive */
+			@media (max-width: 768px) {
+				.hero h1 {
+					font-size: 36px;
+				}
+
+				.hero .subtitle {
+					font-size: 20px;
+				}
+
+				.hero p {
+					font-size: 16px;
+				}
+
+				h2 {
+					font-size: 32px !important;
+				}
+
+				.stats {
+					grid-template-columns: 1fr;
+				}
+
+				.hero-cta {
+					flex-direction: column;
+					align-items: center;
+				}
+
+				.cta-button {
+					width: 100%;
+					max-width: 300px;
+				}
+
+				.contact-form-wrapper {
+					padding: 32px 24px;
+				}
+
+				.form-row {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<!-- Header -->
+		<header>
+			<nav class="container">
+				<div class="logo">🐱 KittyCat Agency</div>
+				<a href="#contact" class="cta-button">Get Started</a>
+			</nav>
+		</header>
+
+		<!-- Hero Section -->
+		<section class="hero">
+			<div class="container">
+				<h1>10x Your Creator Revenue</h1>
+				<p class="subtitle">Premium 24/7 Chat Management for OnlyFans, Fanvue & Fanflow</p>
+				<p>Native English speakers. Proven 1:10 conversion ratios. No minimum requirements. Scale your revenue without the burnout.</p>
+
+				<div class="hero-cta">
+					<a href="#contact" class="cta-button">Start Growing Today</a>
+					<a href="#how-it-works" class="cta-button cta-button-secondary">See How It Works</a>
+				</div>
+
+				<div class="stats">
+					<div class="stat-item">
+						<span class="stat-number">10x</span>
+						<span class="stat-label">ROI Conversion Ratio</span>
+					</div>
+					<div class="stat-item">
+						<span class="stat-number">24/7</span>
+						<span class="stat-label">Coverage</span>
+					</div>
+					<div class="stat-item">
+						<span class="stat-number">100%</span>
+						<span class="stat-label">Native English</span>
+					</div>
+					<div class="stat-item">
+						<span class="stat-number">$0</span>
+						<span class="stat-label">Minimum Required</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Problem Section -->
+		<section class="problem">
+			<div class="container">
+				<h2>The Creator's Impossible Choice</h2>
+				<div class="problem-grid">
+					<div class="problem-card">
+						<h3>⏰ Time Drain</h3>
+						<p>Spending 4-8+ hours daily managing messages means less time creating content. You can't scale both simultaneously.</p>
+					</div>
+					<div class="problem-card">
+						<h3>💸 Lost Revenue</h3>
+						<p>Every unanswered message is lost money. Poor chat engagement kills subscriber retention and PPV sales.</p>
+					</div>
+					<div class="problem-card">
+						<h3>😴 Burnout</h3>
+						<p>24/7 subscriber expectations create constant pressure. Quality suffers when you're exhausted.</p>
+					</div>
+					<div class="problem-card">
+						<h3>🚫 Existing Solutions Fail</h3>
+						<p>Premium agencies exclude smaller creators with $20K+ minimums. Cheap VAs damage your brand with poor English.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Solution Section -->
+		<section class="solution">
+			<div class="container">
+				<h2>Your Growth Partner</h2>
+				<p class="intro">KittyCat Agency delivers consistent 10x ROI through professional chat management that sounds authentic, builds relationships, and strategically drives revenue.</p>
+
+				<div class="differentiators">
+					<div class="diff-card">
+						<div class="diff-icon">🇺🇸</div>
+						<h3>Native English Speakers</h3>
+						<p>Premium quality that maintains your brand authenticity. No awkward translations or broken English.</p>
+					</div>
+					<div class="diff-card">
+						<div class="diff-icon">📈</div>
+						<h3>Proven 1:10 Conversion</h3>
+						<p>Every $1 a subscriber spends generates $10 in total revenue. Consistent, measurable results.</p>
+					</div>
+					<div class="diff-card">
+						<div class="diff-icon">✨</div>
+						<h3>No Minimums</h3>
+						<p>$2K/month or $200K/month - we work with creators of all sizes. True accessibility.</p>
+					</div>
+					<div class="diff-card">
+						<div class="diff-icon">🔥</div>
+						<h3>Proprietary Scripts</h3>
+						<p>Custom-developed messaging frameworks that convert like fire. Proven across thousands of conversations.</p>
+					</div>
+					<div class="diff-card">
+						<div class="diff-icon">🌐</div>
+						<h3>Multi-Platform</h3>
+						<p>OnlyFans, Fanvue, and Fanflow expertise. Manage all your accounts in one place.</p>
+					</div>
+					<div class="diff-card">
+						<div class="diff-icon">⚡</div>
+						<h3>Response Times</h3>
+						<p>Under 15 minutes average. Your fans never wait, you never miss an opportunity.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- How It Works -->
+		<section class="how-it-works" id="how-it-works">
+			<div class="container">
+				<h2>How It Works</h2>
+				<div class="steps">
+					<div class="step">
+						<div class="step-number">1</div>
+						<h3>Onboarding</h3>
+						<p>Account analysis, voice profiling, and custom script development tailored to your brand.</p>
+					</div>
+					<div class="step">
+						<div class="step-number">2</div>
+						<h3>24/7 Coverage</h3>
+						<p>Native English specialists handle all messages across all time zones using your voice.</p>
+					</div>
+					<div class="step">
+						<div class="step-number">3</div>
+						<h3>Revenue Optimization</h3>
+						<p>Strategic PPV deployment, tips, and custom requests using proven conversion frameworks.</p>
+					</div>
+					<div class="step">
+						<div class="step-number">4</div>
+						<h3>Performance Tracking</h3>
+						<p>Real-time metrics, conversion tracking, and ongoing optimization to maximize results.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Results Section -->
+		<section class="results">
+			<div class="container">
+				<h2>Results That Speak</h2>
+				<p class="intro">Our clients see measurable, consistent growth. Here's what you can expect:</p>
+
+				<div class="results-grid">
+					<div class="result-card">
+						<h3>2-5x</h3>
+						<p>Average revenue increase within 60 days</p>
+					</div>
+					<div class="result-card">
+						<h3>4-8 hrs</h3>
+						<p>Daily time reclaimed for content creation</p>
+					</div>
+					<div class="result-card">
+						<h3>98%+</h3>
+						<p>Message response rate within 24 hours</p>
+					</div>
+					<div class="result-card">
+						<h3>90%+</h3>
+						<p>Creator retention after 90 days</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact Form -->
+		<section class="cta-section" id="contact">
+			<div class="container">
+				<h2>Ready to Scale Your Revenue?</h2>
+				<p>Join creators who've transformed their business with professional chat management. No minimums. No long-term commitments. Just results.</p>
+
+				<div class="contact-form-wrapper">
+					<form id="contactForm" class="contact-form">
+						<div class="form-group">
+							<label for="inquiryType">Inquiry Type *</label>
+							<select id="inquiryType" name="inquiryType" required>
+								<option value="">Select type...</option>
+								<option value="sales">Sales Inquiry</option>
+								<option value="general">General</option>
+							</select>
+						</div>
+
+						<!-- Sales Inquiry Fields -->
+						<div id="salesFields" style="display: none;">
+							<div class="form-row">
+								<div class="form-group">
+									<label for="companyName">Company Name</label>
+									<input type="text" id="companyName" name="companyName" placeholder="Your company name">
+								</div>
+								<div class="form-group">
+									<label for="numModels">Number of Models</label>
+									<input type="number" id="numModels" name="numModels" placeholder="e.g., 5" min="0">
+								</div>
+							</div>
+
+							<div class="form-row">
+								<div class="form-group">
+									<label for="telegram">Telegram Name</label>
+									<input type="text" id="telegram" name="telegram" placeholder="@yourtelegram">
+								</div>
+								<div class="form-group">
+									<label for="discord">Discord Name</label>
+									<input type="text" id="discord" name="discord" placeholder="YourDiscord#1234">
+								</div>
+							</div>
+
+							<div class="form-row">
+								<div class="form-group">
+									<label for="country">Country</label>
+									<input type="text" id="country" name="country" placeholder="Your country">
+								</div>
+								<div class="form-group">
+									<label for="phone">Phone</label>
+									<input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+								</div>
+							</div>
+						</div>
+
+						<!-- General Inquiry Fields -->
+						<div id="generalFields" style="display: none;">
+							<div class="form-group">
+								<label for="message">Message *</label>
+								<textarea id="message" name="message" rows="6" placeholder="Tell us what you need help with..."></textarea>
+							</div>
+						</div>
+
+						<!-- Email (Always Required) -->
+						<div class="form-group">
+							<label for="email">Email *</label>
+							<input type="email" id="email" name="email" placeholder="your@email.com" required>
+						</div>
+
+						<div id="formMessage" class="form-message"></div>
+
+						<button type="submit" class="cta-button" style="font-size: 18px; padding: 16px 48px; width: 100%; max-width: 400px;">
+							<span id="submitText">Send Inquiry</span>
+							<span id="submitLoader" style="display: none;">Sending...</span>
+						</button>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer>
+			<div class="container">
+				<div class="footer-content">
+					<div class="footer-section">
+						<h3>🐱 KittyCat Agency</h3>
+						<p style="color: rgba(255,255,255,0.7); margin-top: 8px;">Premium 24/7 chat management for content creators on OnlyFans, Fanvue, and Fanflow.</p>
+					</div>
+					<div class="footer-section">
+						<h3>Services</h3>
+						<ul>
+							<li><a href="#how-it-works">How It Works</a></li>
+							<li><a href="#contact">Get Started</a></li>
+							<li><a href="#contact">Pricing</a></li>
+							<li><a href="#contact">Case Studies</a></li>
+						</ul>
+					</div>
+					<div class="footer-section">
+						<h3>Company</h3>
+						<ul>
+							<li><a href="#contact">About Us</a></li>
+							<li><a href="#contact">Careers</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</div>
+					<div class="footer-section">
+						<h3>Contact</h3>
+						<ul>
+							<li><a href="mailto:hello@kittycatagency.com">hello@kittycatagency.com</a></li>
+							<li style="color: rgba(255,255,255,0.7); margin-top: 16px;">Available 24/7</li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer-bottom">
+					<p>&copy; 2025 KittyCat Agency. All rights reserved.</p>
+				</div>
+			</div>
+		</footer>
+
+		<script>
+			// Handle inquiry type change to show/hide appropriate fields
+			const inquiryTypeSelect = document.getElementById('inquiryType');
+			const salesFields = document.getElementById('salesFields');
+			const generalFields = document.getElementById('generalFields');
+			const messageField = document.getElementById('message');
+
+			inquiryTypeSelect.addEventListener('change', function() {
+				const selectedType = this.value;
+
+				if (selectedType === 'sales') {
+					salesFields.style.display = 'block';
+					generalFields.style.display = 'none';
+					messageField.removeAttribute('required');
+				} else if (selectedType === 'general') {
+					salesFields.style.display = 'none';
+					generalFields.style.display = 'block';
+					messageField.setAttribute('required', 'required');
+				} else {
+					salesFields.style.display = 'none';
+					generalFields.style.display = 'none';
+					messageField.removeAttribute('required');
+				}
+			});
+
+			// Handle form submission
+			const contactForm = document.getElementById('contactForm');
+			const formMessage = document.getElementById('formMessage');
+			const submitText = document.getElementById('submitText');
+			const submitLoader = document.getElementById('submitLoader');
+
+			contactForm.addEventListener('submit', async function(e) {
+				e.preventDefault();
+
+				// Show loading state
+				submitText.style.display = 'none';
+				submitLoader.style.display = 'inline';
+				formMessage.className = 'form-message';
+				formMessage.textContent = '';
+
+				// Get form data
+				const formData = new FormData(contactForm);
+				const inquiryType = formData.get('inquiryType');
+
+				// Build payload
+				const payload = {
+					domain: 'kittycatagency.com',
+					inquiryType: inquiryType,
+					email: formData.get('email'),
+					timestamp: new Date().toISOString()
+				};
+
+				// Add fields based on inquiry type
+				if (inquiryType === 'sales') {
+					payload.companyName = formData.get('companyName') || '';
+					payload.numModels = formData.get('numModels') || '';
+					payload.telegram = formData.get('telegram') || '';
+					payload.discord = formData.get('discord') || '';
+					payload.country = formData.get('country') || '';
+					payload.phone = formData.get('phone') || '';
+				} else if (inquiryType === 'general') {
+					payload.message = formData.get('message') || '';
+				}
+
+				try {
+					// Send to n8n webhook
+					const response = await fetch('https://n8ncontent.goshenducks.com/webhook/contact-form-submit', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify(payload)
+					});
+
+					if (response.ok) {
+						// Success
+						formMessage.className = 'form-message success';
+						formMessage.textContent = '✓ Thanks! We\'ll get back to you within 24 hours.';
+						contactForm.reset();
+						salesFields.style.display = 'none';
+						generalFields.style.display = 'none';
+					} else {
+						throw new Error('Server responded with an error');
+					}
+				} catch (error) {
+					// Error
+					console.error('Form submission error:', error);
+					formMessage.className = 'form-message error';
+					formMessage.textContent = '✗ Something went wrong. Please try again or email us directly at hello@kittycatagency.com';
+				} finally {
+					// Reset button state
+					submitText.style.display = 'inline';
+					submitLoader.style.display = 'none';
+				}
+			});
+		</script>
 	</body>
 </html>
