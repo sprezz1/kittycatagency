@@ -18,17 +18,46 @@
 			}
 
 			:root {
-				--primary: #10b981;
-				--primary-dark: #059669;
-				--primary-light: #34d399;
-				--secondary: #14b8a6;
-				--dark-bg: #0f172a;
-				--dark-card: #1e293b;
-				--dark-card-hover: #334155;
-				--text-primary: #f1f5f9;
-				--text-secondary: #cbd5e1;
-				--text-muted: #94a3b8;
-				--border-dark: #334155;
+				/* Logo Foundation Colors */
+				--logo-soft-pink: #FFBDC7;
+				--logo-highlight: #FFE3E7;
+				--logo-highlight-alt: #FFE4E8;
+				--logo-cherry: #F00C0D;
+				--logo-mid-pink: #FFBCC6;
+				--logo-glow: #FFE5E9;
+
+				/* Primary Brand Colors */
+				--primary: #FF6B9D;
+				--primary-dark: #F00C0D;
+				--primary-light: #FFBDC7;
+				--secondary: #FF8FAB;
+
+				/* Background Colors */
+				--light-bg: #FFF8FA;
+				--light-card: #FFFFFF;
+				--light-card-hover: #FFE3E7;
+				--accent-bg: #FFBDC7;
+
+				/* Text Colors */
+				--text-primary: #2D1B2E;
+				--text-secondary: #5C4B5E;
+				--text-muted: #8C7A8E;
+				--text-accent: #F00C0D;
+
+				/* Neutral Colors */
+				--border-light: #E8D4E8;
+				--border-medium: #D4BCD6;
+				--shadow: rgba(45, 27, 46, 0.1);
+
+				/* UI State Colors */
+				--success: #4ADE80;
+				--success-bg: #DCFCE7;
+				--error: #F00C0D;
+				--error-bg: #FFE3E7;
+				--warning: #FBBF24;
+				--warning-bg: #FEF3C7;
+
+				/* Legacy/Utility */
 				--white: #ffffff;
 			}
 
@@ -36,7 +65,7 @@
 				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 				line-height: 1.6;
 				color: var(--text-primary);
-				background: var(--dark-bg);
+				background: var(--light-bg);
 			}
 
 			.container {
@@ -47,10 +76,10 @@
 
 			/* Header */
 			header {
-				background: rgba(15, 23, 42, 0.95);
+				background: rgba(255, 255, 255, 0.95);
 				backdrop-filter: blur(10px);
 				padding: 20px 0;
-				border-bottom: 1px solid var(--border-dark);
+				border-bottom: 1px solid var(--border-light);
 				position: sticky;
 				top: 0;
 				z-index: 100;
@@ -86,7 +115,7 @@
 
 			.cta-button:hover {
 				transform: translateY(-2px);
-				box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+				box-shadow: 0 10px 25px rgba(255, 107, 157, 0.4);
 			}
 
 			.cta-button-secondary {
@@ -97,9 +126,9 @@
 
 			/* Hero Section */
 			.hero {
-				background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #10b981 100%);
+				background: linear-gradient(135deg, var(--logo-highlight) 0%, var(--logo-soft-pink) 50%, var(--primary) 100%);
 				position: relative;
-				color: var(--white);
+				color: var(--text-primary);
 				padding: 100px 0 80px;
 				text-align: center;
 			}
@@ -111,7 +140,7 @@
 				left: 0;
 				right: 0;
 				bottom: 0;
-				background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.15), transparent 50%);
+				background: radial-gradient(circle at 50% 0%, rgba(255, 107, 157, 0.2), transparent 50%);
 				pointer-events: none;
 			}
 
@@ -165,6 +194,7 @@
 				font-weight: 900;
 				display: block;
 				margin-bottom: 8px;
+				color: var(--primary-dark);
 			}
 
 			.stat-label {
@@ -175,7 +205,7 @@
 			/* Problem Section */
 			.problem {
 				padding: 80px 0;
-				background: var(--dark-bg);
+				background: var(--light-bg);
 			}
 
 			.problem h2 {
@@ -193,22 +223,24 @@
 			}
 
 			.problem-card {
-				background: var(--dark-card);
+				background: var(--light-card);
 				padding: 32px;
 				border-radius: 12px;
-				border: 1px solid var(--border-dark);
+				border: 1px solid var(--border-light);
 				transition: all 0.3s;
 			}
 
 			.problem-card:hover {
-				background: var(--dark-card-hover);
-				border-color: rgba(16, 185, 129, 0.3);
+				background: var(--light-card-hover);
+				border-color: var(--primary);
+				transform: translateY(-2px);
+				box-shadow: 0 8px 24px rgba(255, 107, 157, 0.2);
 			}
 
 			.problem-card h3 {
 				font-size: 24px;
 				margin-bottom: 16px;
-				color: var(--primary-light);
+				color: var(--primary);
 			}
 
 			.problem-card p {
@@ -219,7 +251,7 @@
 			/* Solution Section */
 			.solution {
 				padding: 80px 0;
-				background: #1a1f2e;
+				background: var(--accent-bg);
 			}
 
 			.solution h2 {
@@ -233,7 +265,7 @@
 			.solution .intro {
 				text-align: center;
 				font-size: 20px;
-				color: var(--text-muted);
+				color: var(--text-secondary);
 				max-width: 800px;
 				margin: 0 auto 64px;
 			}
@@ -248,17 +280,17 @@
 			.diff-card {
 				text-align: center;
 				padding: 40px 24px;
-				background: var(--dark-card);
-				border: 1px solid var(--border-dark);
+				background: var(--light-card);
+				border: 1px solid var(--border-light);
 				border-radius: 12px;
 				transition: all 0.3s;
 			}
 
 			.diff-card:hover {
-				border-color: var(--primary);
-				background: var(--dark-card-hover);
+				border-color: var(--primary-dark);
+				background: var(--light-card-hover);
 				transform: translateY(-4px);
-				box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+				box-shadow: 0 8px 24px rgba(240, 12, 13, 0.3);
 			}
 
 			.diff-icon {
@@ -280,7 +312,7 @@
 			/* How It Works */
 			.how-it-works {
 				padding: 80px 0;
-				background: var(--dark-bg);
+				background: var(--light-bg);
 			}
 
 			.how-it-works h2 {
@@ -313,7 +345,7 @@
 				font-size: 28px;
 				font-weight: 800;
 				margin: 0 auto 24px;
-				box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+				box-shadow: 0 0 20px rgba(255, 107, 157, 0.4);
 			}
 
 			.step h3 {
@@ -330,7 +362,7 @@
 			/* Results Section */
 			.results {
 				padding: 80px 0;
-				background: linear-gradient(135deg, #1e293b 0%, #059669 100%);
+				background: linear-gradient(135deg, var(--logo-soft-pink) 0%, var(--primary-dark) 100%);
 				color: var(--white);
 			}
 
@@ -356,11 +388,11 @@
 			}
 
 			.result-card {
-				background: rgba(255, 255, 255, 0.1);
+				background: rgba(255, 255, 255, 0.15);
 				padding: 32px;
 				border-radius: 12px;
 				backdrop-filter: blur(10px);
-				border: 1px solid rgba(255, 255, 255, 0.2);
+				border: 1px solid rgba(255, 255, 255, 0.3);
 			}
 
 			.result-card h3 {
@@ -378,7 +410,7 @@
 			.cta-section {
 				padding: 100px 0;
 				text-align: center;
-				background: #1a1f2e;
+				background: var(--accent-bg);
 			}
 
 			.cta-section h2 {
@@ -390,7 +422,7 @@
 
 			.cta-section p {
 				font-size: 20px;
-				color: var(--text-muted);
+				color: var(--text-secondary);
 				margin-bottom: 40px;
 				max-width: 600px;
 				margin-left: auto;
@@ -401,11 +433,11 @@
 			.contact-form-wrapper {
 				max-width: 700px;
 				margin: 48px auto 0;
-				background: var(--dark-card);
+				background: var(--light-card);
 				padding: 48px;
 				border-radius: 16px;
-				border: 1px solid var(--border-dark);
-				box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+				border: 1px solid var(--border-light);
+				box-shadow: 0 8px 32px rgba(45, 27, 46, 0.1);
 				text-align: left;
 			}
 
@@ -431,12 +463,12 @@
 			.form-group select,
 			.form-group textarea {
 				padding: 12px 16px;
-				border: 1px solid var(--border-dark);
+				border: 1px solid var(--border-light);
 				border-radius: 8px;
 				font-size: 16px;
 				font-family: inherit;
 				transition: all 0.2s;
-				background: #0f172a;
+				background: var(--white);
 				color: var(--text-primary);
 			}
 
@@ -445,8 +477,8 @@
 			.form-group textarea:focus {
 				outline: none;
 				border-color: var(--primary);
-				background: #1e293b;
-				box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+				background: var(--white);
+				box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.1);
 			}
 
 			.form-group textarea {
@@ -470,24 +502,24 @@
 
 			.form-message.success {
 				display: block;
-				background: #dcfce7;
+				background: var(--success-bg);
 				color: #166534;
-				border: 1px solid #86efac;
+				border: 1px solid var(--success);
 			}
 
 			.form-message.error {
 				display: block;
-				background: #fee2e2;
+				background: var(--error-bg);
 				color: #991b1b;
-				border: 1px solid #fca5a5;
+				border: 1px solid var(--error);
 			}
 
 			/* Footer */
 			footer {
-				background: #0a0f1a;
-				color: var(--white);
+				background: var(--accent-bg);
+				color: var(--text-primary);
 				padding: 60px 0 40px;
-				border-top: 1px solid var(--border-dark);
+				border-top: 1px solid var(--border-medium);
 			}
 
 			.footer-content {
@@ -512,20 +544,24 @@
 			}
 
 			.footer-section a {
-				color: rgba(255, 255, 255, 0.7);
+				color: var(--text-secondary);
 				text-decoration: none;
 				transition: color 0.2s;
 			}
 
 			.footer-section a:hover {
-				color: var(--white);
+				color: var(--text-primary);
+			}
+
+			.footer-section p {
+				color: var(--text-secondary);
 			}
 
 			.footer-bottom {
 				text-align: center;
 				padding-top: 32px;
-				border-top: 1px solid rgba(255, 255, 255, 0.1);
-				color: rgba(255, 255, 255, 0.6);
+				border-top: 1px solid var(--border-light);
+				color: var(--text-muted);
 			}
 
 			/* Responsive */
@@ -818,7 +854,7 @@
 				<div class="footer-content">
 					<div class="footer-section">
 						<h3>🐱 KittyCat Agency</h3>
-						<p style="color: rgba(255,255,255,0.7); margin-top: 8px;">Premium 24/7 chat management for content creators on OnlyFans, Fanvue, and Fanflow.</p>
+						<p style="margin-top: 8px;">Premium 24/7 chat management for content creators on OnlyFans, Fanvue, and Fanflow.</p>
 					</div>
 					<div class="footer-section">
 						<h3>Services</h3>
@@ -841,7 +877,7 @@
 						<h3>Contact</h3>
 						<ul>
 							<li><a href="mailto:hello@kittycatagency.com">hello@kittycatagency.com</a></li>
-							<li style="color: rgba(255,255,255,0.7); margin-top: 16px;">Available 24/7</li>
+							<li style="margin-top: 16px;">Available 24/7</li>
 						</ul>
 					</div>
 				</div>
