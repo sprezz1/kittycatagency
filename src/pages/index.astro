@@ -76,10 +76,10 @@
 
 			/* Header */
 			header {
-				background: rgba(255, 255, 255, 0.95);
+			background: var(--logo-soft-pink);
 				backdrop-filter: blur(10px);
-				padding: 20px 0;
-				border-bottom: 1px solid var(--border-light);
+			padding: 10px 0;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 				position: sticky;
 				top: 0;
 				z-index: 100;
@@ -91,14 +91,16 @@
 				align-items: center;
 			}
 
-			.logo {
-				font-size: 24px;
-				font-weight: 800;
-				background: linear-gradient(135deg, var(--primary), var(--secondary));
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-				background-clip: text;
-			}
+		.logo {
+			display: flex;
+			align-items: center;
+		}
+
+		.logo img {
+			height: 80px;
+			width: auto;
+			display: block;
+		}
 
 			.cta-button {
 				background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -126,7 +128,7 @@
 
 			/* Hero Section */
 			.hero {
-				background: linear-gradient(135deg, var(--logo-highlight) 0%, var(--logo-soft-pink) 50%, var(--primary) 100%);
+			background: linear-gradient(135deg, var(--light-bg) 0%, var(--logo-glow) 50%, var(--logo-highlight) 100%);
 				position: relative;
 				color: var(--text-primary);
 				padding: 100px 0 80px;
@@ -610,7 +612,9 @@
 		<!-- Header -->
 		<header>
 			<nav class="container">
-				<div class="logo">🐱 KittyCat Agency</div>
+				<div class="logo">
+					<img src="/logo.png" alt="KittyCat Agency" />
+				</div>
 				<a href="#contact" class="cta-button">Get Started</a>
 			</nav>
 		</header>
